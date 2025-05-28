@@ -1,0 +1,67 @@
+# Build Results
+bin/
+obj/
+[Bb]uild/
+[Bb]uilds/
+
+# VS Code
+.vscode/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Rider
+.idea/
+
+# Visual Studio
+.vs/
+*.dbmdl
+*.sdf
+*.psess
+*.vsp
+*.pdb
+*.cache
+
+# Dotnet CLI
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+*.nuspec
+*.psmdcp
+*.symbols.nupkg
+
+# Microsoft Azure Web App publish settings
+PublishProfiles/
+
+# .NET Core
+*.deps.json
+*.runtimeconfig.json
+*.runtimeconfig.dev.json
+
+# Entity Framework Migrations (optional)
+Migrations/
+
+# Coverage reports
+coverage/
+*.coverage
+*.coveragexml
+TestResults/
