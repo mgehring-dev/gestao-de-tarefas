@@ -34,7 +34,9 @@ namespace GestaoDeTarefas.Controllers
         return BadRequest("User not found");
       }
 
-      if (new PasswordHasher<User>().VerifyHashedPassword(user, user.PasswordHash, request.Password) == PasswordVerificationResult.Failed)
+      var passwordResult = new PasswordHasher<User>().VerifyHashedPassword(user, user.PasswordHash, request.Password);
+
+      if (passwordResult == PasswordVerificationResult.Failed)
       {
         return BadRequest("Wrong password");
       }
