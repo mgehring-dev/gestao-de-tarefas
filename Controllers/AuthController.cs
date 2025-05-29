@@ -1,7 +1,7 @@
-using System.Threading.Tasks;
 using GestaoDeTarefas.Entities;
 using GestaoDeTarefas.Models;
 using GestaoDeTarefas.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GestaoDeTarefas.Controllers
@@ -34,5 +34,20 @@ namespace GestaoDeTarefas.Controllers
 
       return Ok(token);
     }
+
+    [Authorize]
+    [HttpGet]
+    public IActionResult OnlyAuthenticated()
+    {
+      return Ok("You are authenticated!");
+    }
+
+    [Authorize(Roles = "Admin")]
+    [HttpGet("admin-only")]
+    public IActionResult AdminOnly()
+    {
+      return Ok("You are admin!");
+    }
+
   }
 }

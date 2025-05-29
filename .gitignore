@@ -57,9 +57,6 @@ PublishProfiles/
 *.runtimeconfig.json
 *.runtimeconfig.dev.json
 
-# Entity Framework Migrations (optional)
-Migrations/
-
 # Coverage reports
 coverage/
 *.coverage
