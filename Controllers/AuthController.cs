@@ -24,7 +24,7 @@ namespace GestaoDeTarefas.Controllers
     }
 
     [HttpPost("login")]
-    public async Task<ActionResult<string>> Login(UserDto request)
+    public async Task<ActionResult<TokenResponseDto>> Login(UserDto request)
     {
       var token = await authService.LoginAsync(request);
       if (token is null)
@@ -33,6 +33,18 @@ namespace GestaoDeTarefas.Controllers
       }
 
       return Ok(token);
+    }
+
+    [HttpPost("refresh-tokens")]
+    public async Task<ActionResult<TokenResponseDto>> RefreshTokens(RefreshTokenRequestDto request)
+    {
+      var result = await authService.RefreshTokensAsync(request);
+      if (result is null || result.AccessToken is null || result.RefreshToken is null)
+      {
+        return Unauthorized("Invalid refresh token.");
+      } 
+      
+      return Ok(result);
     }
 
     [Authorize]
