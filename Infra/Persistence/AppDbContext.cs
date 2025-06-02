@@ -1,15 +1,13 @@
 
-using GestaoDeTarefas.Entities;
+using GestaoDeTarefas.Module.Users;
 using Microsoft.EntityFrameworkCore;
 
-namespace GestaoDeTarefas.Infra.Persistence
-{
-  public class AppDbContext : DbContext
-  {
-    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
-    {
-    }
+namespace GestaoDeTarefas.Infra;
 
-    public DbSet<User> Users { get; set; }
+public class AppDbContext : DbContext
+{
+  public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+  {
   }
+  public DbSet<User> Users { get; set; }
 }
