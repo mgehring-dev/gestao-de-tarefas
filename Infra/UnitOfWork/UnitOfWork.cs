@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using GestaoDeTarefas.Module.Task;
 using GestaoDeTarefas.Module.Users;
 
 namespace GestaoDeTarefas.Infra;
@@ -6,9 +7,10 @@ namespace GestaoDeTarefas.Infra;
 [ExcludeFromCodeCoverage]
 public class UnitOfWork : IUnitOfWork
 {
-  private AppDbContext _context;
+  private readonly AppDbContext _context;
 
   private IUserRepository _userRepository;
+  private ITaskRepository _taskRepository;
 
   public UnitOfWork(AppDbContext context)
   {
@@ -23,6 +25,17 @@ public class UnitOfWork : IUnitOfWork
         _userRepository = new UserRepository(_context);
 
       return _userRepository;
+    }
+  }
+
+  public ITaskRepository Task
+  {
+    get
+    {
+      if (_taskRepository == null)
+        _taskRepository = new TaskRepository(_context);
+
+      return _taskRepository;
     }
   }
 }
