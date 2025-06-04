@@ -1,16 +1,16 @@
 using System.Text;
 using GestaoDeTarefas.Infra;
 using GestaoDeTarefas.Module.Auth;
+using GestaoDeTarefas.Module.Task;
 using GestaoDeTarefas.Module.Users;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Scalar.AspNetCore;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
-var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
+var builder = WebApplication.CreateBuilder(args); 
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
@@ -34,6 +34,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ITaskService, TaskService>();
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
@@ -64,6 +65,7 @@ builder.Services.AddSwaggerGen(options =>
             Array.Empty<string>()
         }
     });
+  options.EnableAnnotations(); 
 });
 
 var app = builder.Build();
