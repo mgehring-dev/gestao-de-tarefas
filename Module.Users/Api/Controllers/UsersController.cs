@@ -1,8 +1,10 @@
+using GestaoDeTarefas.Module.Users.Domain.Models;
+using GestaoDeTarefas.Module.Users.Domain.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
-namespace GestaoDeTarefas.Module.Users;
+namespace GestaoDeTarefas.Module.Users.Api.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]

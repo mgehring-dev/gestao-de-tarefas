@@ -1,4 +1,4 @@
-namespace GestaoDeTarefas.Module.Auth;
+namespace GestaoDeTarefas.Module.Auth.Domain.Models;
 
 public class LoginDto
 {

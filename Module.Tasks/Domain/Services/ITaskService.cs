@@ -1,6 +1,7 @@
-using TaskEntity = GestaoDeTarefas.Module.Task.Task;
+using GestaoDeTarefas.Module.Tasks.Domain.Models;
+using TaskEntity = GestaoDeTarefas.Module.Tasks.Domain.Entities.Task;
 
-namespace GestaoDeTarefas.Module.Task;
+namespace GestaoDeTarefas.Module.Tasks.Domain.Services;
 
 public interface ITaskService
 {

@@ -1,7 +1,8 @@
-using System.ComponentModel.DataAnnotations.Schema;
-using GestaoDeTarefas.Infra;
+using System.ComponentModel.DataAnnotations.Schema; 
+using GestaoDeTarefas.Infra.Entities;
+using GestaoDeTarefas.Module.Tasks.Domain.Enums;
 
-namespace GestaoDeTarefas.Module.Task;
+namespace GestaoDeTarefas.Module.Tasks.Domain.Entities;
 
 public class Task : EntityBase
 {

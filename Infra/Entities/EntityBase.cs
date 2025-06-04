@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
-namespace GestaoDeTarefas.Infra;
+namespace GestaoDeTarefas.Infra.Entities;
 
 [ExcludeFromCodeCoverage]
 public class EntityBase

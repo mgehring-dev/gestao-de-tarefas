@@ -1,12 +1,13 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Text;
-using GestaoDeTarefas.Infra;
-using GestaoDeTarefas.Module.Users;
+using System.Text; 
+using GestaoDeTarefas.Infra.UnitOfWork;
+using GestaoDeTarefas.Module.Auth.Domain.Models;
+using GestaoDeTarefas.Module.Users.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 
-namespace GestaoDeTarefas.Module.Auth;
+namespace GestaoDeTarefas.Module.Auth.Domain.Services;
 
 public class AuthService(IUnitOfWork unitOfWork, IConfiguration configuration) : IAuthService
 {

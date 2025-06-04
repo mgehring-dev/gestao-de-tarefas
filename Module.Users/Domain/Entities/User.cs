@@ -1,6 +1,6 @@
-using GestaoDeTarefas.Infra;
+using GestaoDeTarefas.Infra.Entities;
 
-namespace GestaoDeTarefas.Module.Users;
+namespace GestaoDeTarefas.Module.Users.Domain.Entities;
 
 public class User : EntityBase
 {

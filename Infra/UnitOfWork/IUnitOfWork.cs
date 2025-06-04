@@ -1,7 +1,7 @@
-using GestaoDeTarefas.Module.Task;
-using GestaoDeTarefas.Module.Users;
+ using GestaoDeTarefas.Module.Tasks.Domain.Repositories;
+using GestaoDeTarefas.Module.Users.Domain.Repositories;
 
-namespace GestaoDeTarefas.Infra;
+namespace GestaoDeTarefas.Infra.UnitOfWork;
 
 public interface IUnitOfWork
 {

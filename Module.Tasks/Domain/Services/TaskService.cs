@@ -1,6 +1,10 @@
 using GestaoDeTarefas.Infra;
+using GestaoDeTarefas.Infra.UnitOfWork;
+using GestaoDeTarefas.Module.Tasks.Domain.Enums;
+using GestaoDeTarefas.Module.Tasks.Domain.Models;
+using TaskEntity = GestaoDeTarefas.Module.Tasks.Domain.Entities.Task;
 
-namespace GestaoDeTarefas.Module.Task;
+namespace GestaoDeTarefas.Module.Tasks.Domain.Services;
 
 public class TaskService : ITaskService
 {
@@ -11,7 +15,7 @@ public class TaskService : ITaskService
     _unitOfWork = unitOfWork;
   }
 
-  public async Task<Task?> RegisterAsync(TaskDto request)
+  public async Task<TaskEntity?> RegisterAsync(TaskDto request)
   {
     var user = await _unitOfWork.User.ObterComCondicaoAsync(u => u.Id == request.IdUser);
     if (user == null || !user.Any() || user.First().IsDeleted)
@@ -19,7 +23,7 @@ public class TaskService : ITaskService
       return null;
     }
 
-    var task = new Task
+    var task = new TaskEntity
     {
       Title = request.Title,
       Description = request.Description,
@@ -59,11 +63,13 @@ public class TaskService : ITaskService
       Description = task.Description,
       DueDate = task.DueDate,
       Status = GetStatusDescription(task.Status),
-      User = new TaskUserDto
-      {
-        Id = user.Id,
-        UserName = user.UserName
-      }
+      User = user == null
+        ? null
+        : new TaskUserDto
+        {
+          Id = user.Id,
+          UserName = user.UserName
+        }
     };
   }
 

@@ -1,16 +1,17 @@
 using System.Diagnostics.CodeAnalysis;
-using GestaoDeTarefas.Module.Task;
-using GestaoDeTarefas.Module.Users;
+using GestaoDeTarefas.Infra.Repositories.Persistence;
+using GestaoDeTarefas.Module.Tasks.Domain.Repositories;
+using GestaoDeTarefas.Module.Users.Domain.Repositories;
 
-namespace GestaoDeTarefas.Infra;
+namespace GestaoDeTarefas.Infra.UnitOfWork;
 
 [ExcludeFromCodeCoverage]
 public class UnitOfWork : IUnitOfWork
 {
   private readonly AppDbContext _context;
 
-  private IUserRepository _userRepository;
-  private ITaskRepository _taskRepository;
+  private IUserRepository? _userRepository;
+  private ITaskRepository? _taskRepository;
 
   public UnitOfWork(AppDbContext context)
   {

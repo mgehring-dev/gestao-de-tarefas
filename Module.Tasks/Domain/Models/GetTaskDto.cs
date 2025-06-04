@@ -1,4 +1,4 @@
-namespace GestaoDeTarefas.Module.Task;
+namespace GestaoDeTarefas.Module.Tasks.Domain.Models;
 
 public class GetTaskDto
 {

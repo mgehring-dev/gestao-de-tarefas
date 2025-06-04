@@ -1,4 +1,4 @@
-namespace GestaoDeTarefas.Infra;
+namespace GestaoDeTarefas.Infra.Enums;
 
 public enum EnumTipoAcao
 {

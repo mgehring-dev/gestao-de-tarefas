@@ -1,4 +1,6 @@
-namespace GestaoDeTarefas.Module.Task;
+using GestaoDeTarefas.Module.Tasks.Domain.Enums;
+
+namespace GestaoDeTarefas.Module.Tasks.Domain.Models;
 
 public class TaskDto
 {

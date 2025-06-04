@@ -1,4 +1,4 @@
-namespace GestaoDeTarefas.Module.Users;
+namespace GestaoDeTarefas.Module.Users.Domain.Models;
 
 public class UpdateUserDto
 {

@@ -1,16 +1,16 @@
 using System.Text;
-using GestaoDeTarefas.Infra;
-using GestaoDeTarefas.Module.Auth;
-using GestaoDeTarefas.Module.Task;
-using GestaoDeTarefas.Module.Users;
+using GestaoDeTarefas.Infra.Repositories.Persistence;
+using GestaoDeTarefas.Infra.UnitOfWork;
+using GestaoDeTarefas.Module.Auth.Domain.Services;
+using GestaoDeTarefas.Module.Tasks.Domain.Services;
+using GestaoDeTarefas.Module.Users.Domain.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Scalar.AspNetCore;
-using Swashbuckle.AspNetCore.SwaggerGen;
 
-var builder = WebApplication.CreateBuilder(args); 
+var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddOpenApi();
@@ -65,7 +65,7 @@ builder.Services.AddSwaggerGen(options =>
             Array.Empty<string>()
         }
     });
-  options.EnableAnnotations(); 
+  options.EnableAnnotations();
 });
 
 var app = builder.Build();

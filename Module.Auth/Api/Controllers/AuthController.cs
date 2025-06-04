@@ -1,3 +1,5 @@
+using GestaoDeTarefas.Module.Auth.Domain.Models;
+using GestaoDeTarefas.Module.Auth.Domain.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;

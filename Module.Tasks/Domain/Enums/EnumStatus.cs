@@ -1,4 +1,4 @@
-namespace GestaoDeTarefas.Module.Task;
+namespace GestaoDeTarefas.Module.Tasks.Domain.Enums;
 
 public enum EnumStatus
 {

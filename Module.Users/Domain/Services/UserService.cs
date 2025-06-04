@@ -1,8 +1,9 @@
-
-using GestaoDeTarefas.Infra;
+using GestaoDeTarefas.Infra.UnitOfWork;
+using GestaoDeTarefas.Module.Users.Domain.Entities;
+using GestaoDeTarefas.Module.Users.Domain.Models;
 using Microsoft.AspNetCore.Identity;
 
-namespace GestaoDeTarefas.Module.Users;
+namespace GestaoDeTarefas.Module.Users.Domain.Services;
 
 public class UserService : IUserService
 {

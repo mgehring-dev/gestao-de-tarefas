@@ -1,9 +1,8 @@
-
-using GestaoDeTarefas.Module.Users;
+using GestaoDeTarefas.Module.Users.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using TaskEntity = GestaoDeTarefas.Module.Task.Task;
+using TaskEntity = GestaoDeTarefas.Module.Tasks.Domain.Entities.Task;
 
-namespace GestaoDeTarefas.Infra;
+namespace GestaoDeTarefas.Infra.Repositories.Persistence;
 
 public class AppDbContext : DbContext
 {
